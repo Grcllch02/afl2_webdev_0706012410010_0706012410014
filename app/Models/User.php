@@ -7,9 +7,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+// misal nama tabel dan nama model tidak sesuai 
+    // protected $table = 'create_users_table';
+
+    // tapi karna kita namanya sesuai dimana kalo modelnya User dan tablenya users jadi dia otomatis kenal kalo tabel users itu milik model User
     use HasFactory;
 
     protected $fillable = [
+        'name',
         'email',
         'password',
         'phone',

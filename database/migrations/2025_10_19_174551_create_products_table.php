@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('price');
             $table->string('stock_quantity');
-            $table->string('img_url')->nullable();
+            $table->string('image_url')->nullable();
             $table->timestamps();
 
             // Then link category_id as a foreign key
