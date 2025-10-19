@@ -38,7 +38,7 @@ class ProductSeeder extends Seeder
             'name' => 'Bola Voli',
             'category_id' => 1,
             'price' => 290000.00,
-            'stock_quantity' => 2,
+            'stock_quantity' => 29,
             'image_url' => ''
         ]);
 
@@ -63,7 +63,7 @@ class ProductSeeder extends Seeder
             'name' => 'Raket Yonex',
             'category_id' => 2,
             'price' => 450000.00,
-            'stock_quantity' => 3,
+            'stock_quantity' => 34,
             'image_url' => ''
         ]);
         
@@ -88,7 +88,7 @@ class ProductSeeder extends Seeder
             'name' => 'Rompi Dewasa',
             'category_id' => 3,
             'price' => 90000.00,
-            'stock_quantity' => 3,
+            'stock_quantity' => 38,
             'image_url' => ''
         ]);
 
@@ -113,7 +113,7 @@ class ProductSeeder extends Seeder
             'name' => 'Stik Scorpion',
             'category_id' => 4,
             'price' => 200000.00,
-            'stock_quantity' => 1,
+            'stock_quantity' => 18,
             'image_url' => ''
         ]);
 
@@ -129,7 +129,7 @@ class ProductSeeder extends Seeder
             'name' => 'Bola Billiard',
             'category_id' => 4,
             'price' => 225000.00,
-            'stock_quantity' => 3,
+            'stock_quantity' => 39,
             'image_url' => ''
         ]);
         
