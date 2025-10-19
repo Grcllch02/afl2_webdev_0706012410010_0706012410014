@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-             // Define the category_id column first
+            // Define the category_id column first
             $table->unsignedBigInteger('category_id');
             $table->string('price');
             $table->string('stock_quantity');
@@ -23,9 +23,9 @@ return new class extends Migration
 
             // Then link category_id as a foreign key
             $table->foreign('category_id')
-                  ->references('id')
-                  ->on('categories')
-                  ->onDelete('cascade');
+                ->references('id')
+                ->on('categories')
+                ->onDelete('cascade');
         });
     }
 
