@@ -4,13 +4,11 @@
 @section('content')
     <div class="container my-5">
 
-        <!-- Judul utama -->
         <div class="text-center mb-5">
             <h1 class="fw-bold text-dark mb-2">Megaria Sport</h1>
             <p class="text-dark">Pusat Grosir Peralatan Olahraga Berkualitas Sejak 1981</p>
         </div>
 
-        <!-- Keterangan -->
         <div class="card shadow-sm mb-5 border-primary">
             <div class="card-body p-4">
                 <h4 class="fw-semibold mb-3 text-dark">Tentang Kami</h4>
@@ -24,10 +22,8 @@
             </div>
         </div>
 
-        <!-- Visi dan Misi -->
         <div class="row g-4">
 
-            <!-- Visi -->
             <div class="col-md-6">
                 <div class="card shadow-sm h-100 border-primary">
                     <div class="card-header bg-primary text-white">
@@ -45,7 +41,6 @@
                 </div>
             </div>
 
-            <!-- Misi -->
             <div class="col-md-6">
                 <div class="card shadow-sm h-100 border-warning">
                     <div class="card-header bg-warning text-dark">
