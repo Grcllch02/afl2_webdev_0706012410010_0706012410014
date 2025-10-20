@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use \App\Models\User;
 
@@ -20,16 +19,7 @@ class DatabaseSeeder extends Seeder
             CartSeeder::class,
         ]);
         
-         // 🔹 Membuat 5 user dummy menggunakan factory
-        User::factory()->count(5)->create();
-
-        // Buat 1 user dummy
-        User::factory()->create([
-            'email' => 'buelizbaik@email.com',
-            'password' => bcrypt('password'),
-            'phone' => '082343527',
-            'address' => 'Jl. Tunjungan',
-        ]);
+        \App\Models\User::factory()->count(100)->create();
 
         // Cart harus setelah user dibuat
         $this->call([

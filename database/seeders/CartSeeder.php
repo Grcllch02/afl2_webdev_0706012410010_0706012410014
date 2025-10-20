@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
 use App\Models\Cart;
 
 class CartSeeder extends Seeder
@@ -13,6 +14,11 @@ class CartSeeder extends Seeder
      */
     public function run(): void
     {
-        Cart::factory()->count(10)->create();
+        Cart::factory()->create([
+            'user_id' => '2',
+            'product_id' => '5',
+            'quantity' => '4',
+        ]);
+        Cart::factory()->count(100)->create();
     }
 }
