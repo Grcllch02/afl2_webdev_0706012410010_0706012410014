@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/navigation.css">
+{{-- <link rel="stylesheet" href="css/navigation.css">
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -12,4 +12,4 @@
             </div>
         </div>
     </div>
-</nav>
+</nav> --}}

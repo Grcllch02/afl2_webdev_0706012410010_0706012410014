@@ -6,33 +6,26 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            // Define the category_id column first
-            $table->unsignedBigInteger('category_id');
-            $table->string('price');
-            $table->string('stock_quantity');
-            $table->string('img_url')->nullable();
+            $table->id(); // PRIMARY KEY - cuma 1 ini aja!
+            $table->string('name', 150);
+            $table->unsignedBigInteger('category_id'); // WAJIB ada kolom ini dulu!
+            $table->decimal('price', 10, 2);
+            $table->integer('stock_quantity');
+            $table->string('image_url', 255)->nullable();
             $table->timestamps();
 
-            // Then link category_id as a foreign key
+            // Foreign key SETELAH kolom dibuat
             $table->foreign('category_id')
-                ->references('id')
-                ->on('categories')
-                ->onDelete('cascade');
+                  ->references('id')
+                  ->on('categories')
+                  ->onDelete('cascade');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('products');
     }
