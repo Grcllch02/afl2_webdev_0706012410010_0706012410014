@@ -10,9 +10,9 @@ Route::get('/', function () {
     return view('beranda');
 })->name('beranda');
 
-Route::get('/tentangkami', function () {
-    return view('tentangkami');
-})->name('tentangkami');
+// Route::get('/tentangkami', function () {
+//     return view('tentangkami');
+// })->name('tentangkami');
 
 Route::get('/katalog', [KatalogController::class, 'index'])->name('katalog');
 

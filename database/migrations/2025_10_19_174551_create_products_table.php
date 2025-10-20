@@ -20,9 +20,9 @@ return new class extends Migration
 
             // Foreign key SETELAH kolom dibuat
             $table->foreign('category_id')
-                  ->references('id')
-                  ->on('categories')
-                  ->onDelete('cascade');
+                ->references('id')
+                ->on('categories')
+                ->onDelete('cascade');
         });
     }
 
