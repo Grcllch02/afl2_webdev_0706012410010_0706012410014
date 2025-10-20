@@ -9,6 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    // kalo di migrate ini yan jalan
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
@@ -25,6 +26,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
+    // kalo di rollback/hapus maka ini yang jalan untuk hapus tabel dari database
     public function down(): void
     {
         Schema::dropIfExists('users');

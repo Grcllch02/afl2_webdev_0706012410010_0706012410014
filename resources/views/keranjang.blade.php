@@ -4,91 +4,69 @@
 @section('keranjangActive', 'active')
 
 @section('content')
-    <div class="container mt-4">
-        <h2 class="mb-4">Keranjang Belanja</h2>
+    <div class="container py-4">
+        <div class="text-center my-4">
+            <h2 class="mb-0">Keranjang Belanja</h2>
+        </div>
 
         @if ($carts->count() > 0)
-            <div class="card">
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead class="table-light">
-                                <tr>
-                                    <th>Produk</th>
-                                    <th>Harga Satuan</th>
-                                    <th>Jumlah</th>
-                                    <th>Total Harga</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($carts as $cart)
-                                    <tr>
-                                        <td class="align-middle">
-                                            <strong>{{ $cart->product->name }}</strong>
-                                        </td>
-                                        <td class="align-middle">Rp {{ number_format($cart->product->price, 0, ',', '.') }}
-                                        </td>
-                                        <td class="align-middle">
-                                            <div class="input-group" style="width: 130px;">
-                                                <button class="btn btn-outline-secondary btn-sm" type="button" disabled>
-                                                    <i class="bi bi-dash"></i>-
-                                                </button>
-                                                <input type="text" class="form-control form-control-sm text-center"
-                                                    value="{{ $cart->quantity }}" readonly>
-                                                <button class="btn btn-outline-secondary btn-sm" type="button" disabled>
-                                                    <i class="bi bi-plus"></i>+
-                                                </button>
-                                            </div>
-                                        </td>
-                                        <td class="align-middle">
-                                            <strong>Rp
-                                                {{ number_format($cart->product->price * $cart->quantity, 0, ',', '.') }}</strong>
-                                        </td>
-                                        <td class="align-middle">
-                                            <button class="btn btn-sm btn-danger" disabled>
-                                                <i class="bi bi-trash"></i> Hapus
-                                            </button>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8"> 
 
-                    <div class="row mt-4 justify-content-center">
-                        <div class="col-md-4">
-                            <div class="card bg-light">
-                                <div class="card-body">
-                                    <h5 class="card-title">Ringkasan Belanja</h5>
-                                    <hr>
-                                    <div class="d-flex justify-content-between mb-2">
-                                        <span>Total Item:</span>
-                                        <strong>{{ $carts->sum('quantity') }}</strong>
+                    @foreach ($carts as $cart)
+                        <div class="card mb-3 shadow-sm">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-md-5 d-flex align-items-center">
+                                        <img src="https://via.placeholder.com/60" alt="{{ $cart->product->name }}" class="img-fluid me-3" style="max-width: 60px;">
+                                        <span class="fw-bold">{{ $cart->product->name }}</span>
                                     </div>
-                                    <div class="d-flex justify-content-between mb-3">
-                                        <span>Total Harga:</span>
-                                        <strong class="text-primary">
-                                            Rp
-                                            {{ number_format(
-                                                $carts->sum(function ($cart) {
-                                                    return $cart->product->price * $cart->quantity;
-                                                }),
-                                            ) }}
-                                        </strong>
+
+                                    <div class="col-md-2 text-md-end text-start mt-2 mt-md-0">
+                                        Rp {{ number_format($cart->product->price, 0, ',', '.') }}
                                     </div>
-                                    <button class="btn btn-primary w-100" disabled>
-                                        Lanjut ke Pembayaran
-                                    </button>
+
+                                    <div class="col-md-2 mt-2 mt-md-0 d-flex justify-content-md-center justify-content-start">
+                                        <input type="number" class="form-control form-control-sm text-center"
+                                            value="{{ $cart->quantity }}" min="1" style="max-width: 60px;">
+                                    </div>
+
+                                    <div class="col-md-2 text-md-end text-start mt-2 mt-md-0">
+                                        <span class="fw-bold">Rp
+                                            {{ number_format($cart->product->price * $cart->quantity, 0, ',', '.') }}</span>
+                                    </div>
+
+                                    <div class="col-md-1 text-md-end text-start mt-2 mt-md-0">
+                                        <a href="#" class="text-danger text-decoration-none">Hapus</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
 
+                    <div class="d-flex justify-content-between align-items-center mt-4 p-3 bg-light rounded shadow-sm">
+                        @php
+                            $grandTotal = $carts->sum(function ($cart) {
+                                return $cart->product->price * $cart->quantity;
+                            });
+                        @endphp
+
+                        <div class="fs-5">
+                            Total: <strong class="text-primary">Rp {{ number_format($grandTotal, 0, ',', '.') }}</strong>
+                        </div>
+
+                        <div>
+                            <button class="btn btn-primary me-2">Update Keranjang</button>
+
+                            <a href="#" class="btn btn-success">Checkout</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
         @else
-            <div class="alert alert-info" role="alert">
+            <div class="alert alert-info text-center" role="alert">
                 <i class="bi bi-cart-x"></i> Belum ada data di keranjang.
             </div>
         @endif

@@ -11,6 +11,8 @@ class User extends Authenticatable
     // protected $table = 'create_users_table';
 
     // tapi karna kita namanya sesuai dimana kalo modelnya User dan tablenya users jadi dia otomatis kenal kalo tabel users itu milik model User
+
+    // ini untuk si user ini nnti bisa pake factory jadi di declare make factory
     use HasFactory;
 
     protected $fillable = [
