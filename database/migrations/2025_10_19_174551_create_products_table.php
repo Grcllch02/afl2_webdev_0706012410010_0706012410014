@@ -13,8 +13,8 @@ return new class extends Migration
             $table->string('name');
             // Define the category_id column first
             $table->unsignedBigInteger('category_id');
-            $table->string('price');
-            $table->string('stock_quantity');
+            $table->decimal('price');
+            $table->integer('stock_quantity');
             $table->string('image_url')->nullable();
             $table->timestamps();
 

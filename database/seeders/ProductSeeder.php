@@ -15,7 +15,7 @@ class ProductSeeder extends Seeder
             'category_id' => 1,
             'price' => 120000.00,
             'stock_quantity' => 20,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/bolafutsal.png?raw=true'
         ]);
         
         Product::create([
@@ -23,7 +23,7 @@ class ProductSeeder extends Seeder
             'category_id' => 1,
             'price' => 85000.00,
             'stock_quantity' => 19,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/bolabasket.png?raw=true'
         ]);
         
         Product::create([
@@ -31,7 +31,7 @@ class ProductSeeder extends Seeder
             'category_id' => 1,
             'price' => 110000.00,
             'stock_quantity' => 25,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/bolasepak.png?raw=true'
         ]);
 
         Product::create([
@@ -39,7 +39,7 @@ class ProductSeeder extends Seeder
             'category_id' => 1,
             'price' => 290000.00,
             'stock_quantity' => 29,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/bolavoli.png?raw=true'
         ]);
 
         // Badminton (category_id = 2)
@@ -48,7 +48,7 @@ class ProductSeeder extends Seeder
             'category_id' => 2,
             'price' => 48000.00,
             'stock_quantity' => 19,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/raketyty.png?raw=true'
         ]);
 
         Product::create([
@@ -56,7 +56,7 @@ class ProductSeeder extends Seeder
             'category_id' => 2,
             'price' => 115000.00,
             'stock_quantity' => 30,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/raketarrowpoint.png?raw=true'
         ]);
 
         Product::create([
@@ -64,7 +64,7 @@ class ProductSeeder extends Seeder
             'category_id' => 2,
             'price' => 450000.00,
             'stock_quantity' => 34,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/raketyonex.png?raw=true'
         ]);
         
         Product::create([
@@ -72,7 +72,7 @@ class ProductSeeder extends Seeder
             'category_id' => 2,
             'price' => 125000.00,
             'stock_quantity' => 100,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/shuttlecock.png?raw=true'
         ]);
 
         // Alat Renang (category_id = 3)
@@ -81,7 +81,7 @@ class ProductSeeder extends Seeder
             'category_id' => 3,
             'price' => 105000.00,
             'stock_quantity' => 12,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/kacamatamako.png?raw=true'
         ]);
 
         Product::create([
@@ -89,7 +89,7 @@ class ProductSeeder extends Seeder
             'category_id' => 3,
             'price' => 90000.00,
             'stock_quantity' => 38,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/rompidewasa.png?raw=true'
         ]);
 
         Product::create([
@@ -97,7 +97,7 @@ class ProductSeeder extends Seeder
             'category_id' => 3,
             'price' => 45000.00,
             'stock_quantity' => 34,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/papanrenang.png?raw=true'
         ]);
         
         Product::create([
@@ -105,7 +105,7 @@ class ProductSeeder extends Seeder
             'category_id' => 3,
             'price' => 90000.00,
             'stock_quantity' => 100,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/bajurenang.png?raw=true'
         ]);
         
         // Billiard (category_id = 4)
@@ -114,7 +114,7 @@ class ProductSeeder extends Seeder
             'category_id' => 4,
             'price' => 200000.00,
             'stock_quantity' => 18,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/stikscorpion.png?raw=true'
         ]);
 
         Product::create([
@@ -122,7 +122,7 @@ class ProductSeeder extends Seeder
             'category_id' => 4,
             'price' => 225000.00,
             'stock_quantity' => 20,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/tasmurrey.png?raw=true'
         ]);
 
         Product::create([
@@ -130,7 +130,7 @@ class ProductSeeder extends Seeder
             'category_id' => 4,
             'price' => 225000.00,
             'stock_quantity' => 39,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/bolabilliard.png?raw=true'
         ]);
         
         Product::create([
@@ -138,7 +138,7 @@ class ProductSeeder extends Seeder
             'category_id' => 4,
             'price' => 16000.00,
             'stock_quantity' => 100,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/sarungtangan.png?raw=true'
         ]);
 
         // Peralatan Lainnya (category_id = 5)
@@ -147,7 +147,7 @@ class ProductSeeder extends Seeder
             'category_id' => 5,
             'price' => 21000.00,
             'stock_quantity' => 16,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/dumbbell.png?raw=true'
         ]);
 
         Product::create([
@@ -155,7 +155,7 @@ class ProductSeeder extends Seeder
             'category_id' => 5,
             'price' => 50000.00,
             'stock_quantity' => 60,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/lompattali.png?raw=true'
         ]);
 
         Product::create([
@@ -163,7 +163,7 @@ class ProductSeeder extends Seeder
             'category_id' => 5,
             'price' => 60000.00,
             'stock_quantity' => 33,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/pelindunglutut.png?raw=true'
         ]);
         
         Product::create([
@@ -171,7 +171,7 @@ class ProductSeeder extends Seeder
             'category_id' => 5,
             'price' => 28000.00,
             'stock_quantity' => 45,
-            'image_url' => ''
+            'image_url' => 'https://github.com/michellempi/AFL3-Webprog/blob/main/handgrip.png?raw=true'
         ]);
     }
 }

@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CategorySeeder::class,
             ProductSeeder::class,
-            CartSeeder::class,
         ]);
         
         \App\Models\User::factory()->count(100)->create();
