@@ -1,4 +1,4 @@
-@extends('Layout.mainlayout')
+{{-- @extends('Layout.mainlayout')
 
 @section('title', 'Profil User')
 @section('profilActive', 'active')
@@ -55,4 +55,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}

@@ -6,14 +6,16 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    // Tampilkan semua user
     public function index()
     {
-        // Ambil semua user dari database
-        // $users = User::all();
-        $users = User::find($id =2);
-
-        // Kirim data ke view 'users'
-        return view('profil', compact('users'));
+        // Get user with ID 2 (sesuai dengan seeder Anda)
+        $user = User::find(2);
+        
+        // Jika user tidak ditemukan, buat user dummy
+        if (!$user) {
+            $user = User::first(); // Ambil user pertama yang ada
+        }
+        
+        return view('profile', compact('user'));
     }
 }
