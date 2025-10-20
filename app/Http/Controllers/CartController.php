@@ -12,8 +12,9 @@ class CartController extends Controller
      */
     public function index()
     {
-        // Ambil semua cart dengan relasi user dan product
-        $carts = Cart::with(['user', 'product'])->get();
+        $carts = Cart::with(['user', 'product'])
+            ->where('user_id', 2)
+            ->get();
 
         // Kirim data ke view
         return view('keranjang', compact('carts'));

@@ -14,6 +14,11 @@ class CartSeeder extends Seeder
      */
     public function run(): void
     {
+        Cart::factory()->create([
+            'user_id' => '2',
+            'product_id' => '5',
+            'quantity' => '4',
+        ]);
         Cart::factory()->count(100)->create();
     }
 }
