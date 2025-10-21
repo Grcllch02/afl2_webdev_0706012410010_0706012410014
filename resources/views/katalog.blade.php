@@ -4,13 +4,10 @@
 @section('katalogActive', 'active')
 @section('content')
     <div class="container my-5">
-
-
         <div class="text-center mb-5 p-5 text-white"
             style="background: linear-gradient(135deg, #0d6efd 0%, #764ba2 100%); border-radius: 15px;">
             <h1 class="display-4 fw-bold">Katalog Produk</h1>
             <p class="lead">Temukan peralatan olahraga terbaik untuk kebutuhan Anda</p>
-
         </div>
 
         {{-- Looping Kategori --}}
@@ -44,7 +41,6 @@
                             <p class="text-muted">Belum ada produk di kategori ini.</p>
                         </div>
                     @endforelse
-
                 </div>
             </div>
         @endforeach
