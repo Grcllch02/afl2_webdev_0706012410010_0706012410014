@@ -12,9 +12,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             // Define the category_id column first
-            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('category_id'); //bilangan bulat non-negatif
             $table->decimal('price');
-            $table->integer('stock_quantity');
+            $table->integer('stock_quantity'); //hrse pake unsignedInteger biar g negatif
             $table->string('image_url')->nullable();
             $table->timestamps();
 
@@ -22,12 +22,12 @@ return new class extends Migration
             $table->foreign('category_id')
                   ->references('id')
                   ->on('categories')
-                  ->onDelete('cascade');
+                  ->onDelete('cascade'); // Jika kategori dihapus, produk di kategori itu juga dihapus
         });
     }
 
     public function down()
     {
         Schema::dropIfExists('products');
-    }
+    } //????
 };

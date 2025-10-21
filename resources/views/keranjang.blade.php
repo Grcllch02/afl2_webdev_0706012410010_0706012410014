@@ -1,7 +1,7 @@
 @extends('Layout.mainlayout')
 
 @section('title', 'Keranjang_Megaria_Sport')
-@section('keranjangActive', 'active')
+@section('keranjangActive', 'active') 
 
 @section('content')
     <div class="container py-4">
@@ -41,6 +41,7 @@
                                         <span class="fw-bold">Rp
                                             {{ number_format($cart->product->price * $cart->quantity, 0, ',', '.') }}</span>
                                     </div>
+                                    
 
                                     <div class="col-md-2 text-md-end text-start mt-2 mt-md-0">
                                         <a href="#" class="text-danger text-decoration-none">Hapus</a>

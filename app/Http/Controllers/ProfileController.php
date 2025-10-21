@@ -1,10 +1,10 @@
-<?php
+<?php 
 
-namespace App\Http\Controllers;
+// namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 
-class ProfileController extends Controller
-{
-    //
-}
+// class ProfileController extends Controller
+// {
+    
+// } 
