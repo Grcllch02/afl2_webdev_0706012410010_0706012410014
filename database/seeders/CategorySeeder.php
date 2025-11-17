@@ -13,6 +13,11 @@ class CategorySeeder extends Seeder
         Category::create(['name' => 'Badminton']);
         Category::create(['name' => 'Alat Renang']);
         Category::create(['name' => 'Billiard']);
+        Category::create(['name' => 'Padel']);
+        Category::create(['name' => 'Tenis']);
+        Category::create(['name' => 'Pingpong']);
+        Category::create(['name' => 'Golf']);
+        Category::create(['name' => 'Aksesori Olahraga']);
         Category::create(['name' => 'Peralatan Lainnya']);
     }
 }

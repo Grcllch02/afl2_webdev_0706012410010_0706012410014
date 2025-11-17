@@ -12,22 +12,22 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             // Define the category_id column first
-            $table->unsignedBigInteger('category_id'); //bilangan bulat non-negatif
+            $table->unsignedBigInteger('category_id');
             $table->decimal('price');
-            $table->integer('stock_quantity'); //hrse pake unsignedInteger biar g negatif
+            $table->integer('stock_quantity');
             $table->string('image_url')->nullable();
             $table->timestamps();
 
             // Foreign key SETELAH kolom dibuat
             $table->foreign('category_id')
-                  ->references('id')
-                  ->on('categories')
-                  ->onDelete('cascade'); // Jika kategori dihapus, produk di kategori itu juga dihapus
+                ->references('id')
+                ->on('categories')
+                ->onDelete('cascade');
         });
     }
 
     public function down()
     {
         Schema::dropIfExists('products');
-    } //????
+    }
 };
