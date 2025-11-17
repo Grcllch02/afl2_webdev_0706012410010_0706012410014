@@ -19,3 +19,9 @@ Route::get('/katalog', [KatalogController::class, 'index'])->name('katalog');
 Route::get('/keranjang', [CartController::class, 'index'])->name('keranjang');
 
 Route::get('/profile', [UserController::class, 'index'])->name('profile');
+
+// Route::get('/tambahProduk')->name('tambahProduk');
+
+Route::get('/tambahProduk', function () {
+    return view('tambahProduk');
+});

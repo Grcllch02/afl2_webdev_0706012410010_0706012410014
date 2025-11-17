@@ -4,6 +4,10 @@
 @section('katalogActive', 'active')
 @section('content')
     <div class="container my-5">
+        <form action="/katalog" method="GET" class="form-inline w-25 d-flex gap-2 mb-4">
+            <input type="search" placeholder="Search" name="search" class="form-control">
+            <button type="submit" class="btn btn-outline-success">Search</button>
+        </form>
         <div class="text-center mb-5 p-5 text-white"
             style="background: linear-gradient(135deg, #0d6efd 0%, #764ba2 100%); border-radius: 15px;">
             <h1 class="display-4 fw-bold">Katalog Produk</h1>
