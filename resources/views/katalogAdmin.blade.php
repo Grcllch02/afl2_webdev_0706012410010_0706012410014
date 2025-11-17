@@ -1,5 +1,5 @@
 @extends('Layout.mainlayout')
-@include("Layout.navigation")
+@include('Layout.navigation')
 @section('title', 'Katalog Admin')
 @section('katalogActive', 'active')
 @section('content')
@@ -8,6 +8,9 @@
             <input type="search" placeholder="Search" name="search" class="form-control">
             <button type="submit" class="btn btn-outline-success">Search</button>
         </form>
+        <a href="{{ route('produk.create') }}" class="btn btn-primary mb-4">
+            + Add Product
+        </a>
         <div class="text-center mb-5 p-5 text-white"
             style="background: linear-gradient(135deg, #0d6efd 0%, #764ba2 100%); border-radius: 15px;">
             <h1 class="display-4 fw-bold">Katalog Produk</h1>
@@ -35,7 +38,24 @@
                                     <p class="card-text fw-bold text-primary fs-5">
                                         Rp {{ number_format($product->price, 0, ',', '.') }}
                                     </p>
-                                    <a href="#" class="btn btn-primary mt-auto">Tambah ke Keranjang</a>
+                                    <div class="mt-auto d-flex gap-2">
+
+                                        <a href="{{ route('produk.edit', $product->id) }}" class="btn btn-warning w-50">
+                                            Edit
+                                        </a>
+
+                                        {{-- Delete --}}
+                                        <form action="{{ route('produk.destroy', $product->id) }}" method="POST"
+                                            class="w-50">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger w-100"
+                                                onclick="return confirm('Yakin ingin menghapus produk ini?')">
+                                                Delete
+                                            </button>
+                                        </form>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -48,5 +68,9 @@
                 </div>
             </div>
         @endforeach
+        <div>
+            {{-- link ini untuk tampilin yang angka 1 2 next" page gitu yang di bawah --}}
+            {{ $categories->links() }}
+        </div>
     </div>
 @endsection

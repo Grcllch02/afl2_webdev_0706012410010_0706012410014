@@ -28,7 +28,6 @@
                 <li class="nav-item">
                     <a class="nav-link mx-2 {{ request()->is('login') ? 'active' : '' }}" href="/login">Login</a>
                 </li>
-
             </ul>
         </div>
     </div>

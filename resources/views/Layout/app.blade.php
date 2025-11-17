@@ -15,7 +15,7 @@
             </a>
             <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="{{ route('beranda') }}">Beranda</a>
-                <a class="nav-link" href="{{ route('tentangkami') }}">Tentang Kami</a>
+                {{-- <a class="nav-link" href="{{ route('tentangkami') }}">Tentang Kami</a> --}}
                 <a class="nav-link" href="{{ route('katalog') }}">Katalog</a>
                 <a class="nav-link" href="{{ route('keranjang') }}">Keranjang</a>
                 <a class="nav-link" href="{{ route('profile') }}">Profile</a>

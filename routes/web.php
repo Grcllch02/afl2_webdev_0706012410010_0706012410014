@@ -6,6 +6,8 @@ use App\Http\Controllers\KatalogController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\KatalogAdminController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('beranda');
@@ -14,35 +16,28 @@ Route::get('/', function () {
 // Route::get('/tentangkami', function () {
 //     return view('tentangkami');
 // })->name('tentangkami');
+Route::get('/produk/create', [ProductController::class, 'create'])->name('produk.create');
+Route::post('/produk', [ProductController::class, 'store'])->name('produk.store');
+
+Route::get('/produk/{id}/edit', [ProductController::class, 'edit'])->name('produk.edit');
+Route::put('/produk/{id}', [ProductController::class, 'update'])->name('produk.update');
+
 
 Route::get('/katalog', [KatalogController::class, 'index'])->name('katalog');
+Route::get('/katalogAdmin', [KatalogAdminController::class, 'index'])
+    ->name('katalogAdmin');
 
 Route::get('/keranjang', [CartController::class, 'index'])->name('keranjang');
 
 Route::get('/profile', [UserController::class, 'index'])->name('profile');
 
+Route::delete('/produk/{id}', [ProductController::class, 'destroy'])->name('produk.destroy');
 // Route::get('/tambahProduk')->name('tambahProduk');
 
 Route::get('/tambahProduk', function () {
     return view('tambahProduk');
 });
-// Menampilkan form login
-Route::get('/login', function () {
-    return view('login'); // login.blade.php
-})->name('login');
 
-// Menangani submit login
-Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
-
-// Menampilkan form register
-Route::get('/register', function () {
-    return view('register'); // register.blade.php
-})->name('register');
-
-// Menangani submit register
-Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
-
-// Logout
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 
 require __DIR__.'/auth.php';
