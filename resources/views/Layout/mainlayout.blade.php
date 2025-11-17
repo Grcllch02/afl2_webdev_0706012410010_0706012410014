@@ -13,7 +13,6 @@
 
     <body class="d-flex flex-column min-vh-100 bg-light">
     
-    @include("Layout.navigation")
 
     <main class="flex-grow-1">
         @yield('content')

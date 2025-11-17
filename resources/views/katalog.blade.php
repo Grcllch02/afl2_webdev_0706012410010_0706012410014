@@ -1,5 +1,5 @@
 @extends('Layout.mainlayout')
-
+@include("Layout.navigation")
 @section('title', 'Katalog Produk')
 @section('katalogActive', 'active')
 @section('content')
@@ -48,5 +48,9 @@
                 </div>
             </div>
         @endforeach
+        <div>
+            {{-- link ini untuk tampilin yang angka 1 2 next" page gitu yang di bawah --}}
+            {{ $categories->links() }}
+        </div>
     </div>
 @endsection

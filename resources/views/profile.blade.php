@@ -1,4 +1,5 @@
 @extends('Layout.mainlayout')
+@include("Layout.navigation")
 @section('title', 'Profil Saya')
 @section('profilActive', 'active') {{-- Ini akan di-handle di 'navigation.blade.php' --}}
 

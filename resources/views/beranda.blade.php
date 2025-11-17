@@ -1,6 +1,7 @@
 @extends('Layout.mainlayout')
-@section('title', 'Tentang Kami') {{-- Judulnya lebih cocok Tentang Kami --}}
+@include("Layout.navigation")
 @section('berandaActive', 'active')
+@section('title', 'Tentang Kami') {{-- Judulnya lebih cocok Tentang Kami --}}
 
 @section('content')
 
