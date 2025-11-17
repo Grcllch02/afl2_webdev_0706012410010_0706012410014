@@ -38,24 +38,29 @@
                                     <p class="card-text fw-bold text-primary fs-5">
                                         Rp {{ number_format($product->price, 0, ',', '.') }}
                                     </p>
-                                    <div class="mt-auto d-flex gap-2">
+                                    <div class="mt-auto d-flex gap-2 align-items-stretch">
 
-                                        <a href="{{ route('produk.edit', $product->id) }}" class="btn btn-warning w-50">
+                                        {{-- Tombol Edit --}}
+                                        <a href="{{ route('produk.edit', $product->id) }}"
+                                            class="btn btn-warning flex-fill h-100 d-flex justify-content-center align-items-center">
                                             Edit
                                         </a>
 
-                                        {{-- Delete --}}
+                                        {{-- Tombol Delete --}}
                                         <form action="{{ route('produk.destroy', $product->id) }}" method="POST"
-                                            class="w-50">
+                                            class="flex-fill h-100">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger w-100"
+
+                                            <button type="submit"
+                                                class="btn btn-danger w-100 h-100 d-flex justify-content-center align-items-center"
                                                 onclick="return confirm('Yakin ingin menghapus produk ini?')">
                                                 Delete
                                             </button>
                                         </form>
 
                                     </div>
+
                                 </div>
                             </div>
                         </div>
