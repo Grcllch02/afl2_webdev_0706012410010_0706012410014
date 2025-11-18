@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('password');
+            // kalo misal tidak ada keterangan admin atau user maka dia akan otomatis user
+            $table->enum('status', ['admin', 'user'])-> default('user');
             $table->string('phone');
             $table->string('address');
             $table->timestamps();

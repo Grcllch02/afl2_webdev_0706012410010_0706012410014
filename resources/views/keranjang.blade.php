@@ -1,5 +1,6 @@
 @extends('Layout.mainlayout')
-@section('title', 'Keranjang_Megaria_Sport')
+@include('Layout.navigation')
+@section('title', 'KeranjangMegariaSport')
 @section('keranjangActive', 'active')
 
 @section('content')

@@ -27,21 +27,32 @@ class KatalogController extends Controller
                         });
                 })
 
-                // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                // search cuman berdasarkan produk kalo ada baru tampilkan
-                // ->whereHas('products', function($query) use ($search) {
-                //     $query->where('name', 'like', '%' . $search . '%');
-                // })
-                // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                // ini untuk batas pagenya hanya sampai 5 kategori
+                ->paginate(5) 
+                // untuk searchnya tetap ada saat pindah halaman, jadi dia kalo search trs pagination ke page 2 dia tetap ada searchnya, jadi key searchnya tetap tersimpan begitu 
+                ->withQueryString(); 
 
-                ->get();
+            // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            // search cuman berdasarkan produk kalo ada baru tampilkan
+            // ->whereHas('products', function($query) use ($search) {
+            //     $query->where('name', 'like', '%' . $search . '%');
+            // })
+            // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+            // ->get();
             //Ambil semua kategori dengan produknya dari database
             // $categories = Category::with('products')->get();
+            
             return view('katalog', compact('categories'));
         } else {
             // kalo tidak ada yang di search maka ditampilkan semuanya
             //Ambil semua kategori dengan produknya dari database
-            $categories = Category::with('products')->get();
+            $categories = Category::with('products')
+                // ->get();
+                
+                // ini untuk kalo gaada search tetap tampilannya cuman 5 kategori doang  
+                ->paginate(5);
+
             return view('katalog', compact('categories'));
         }
     }

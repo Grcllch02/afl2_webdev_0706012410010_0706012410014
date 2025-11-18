@@ -1,33 +1,46 @@
 @extends('Layout.mainlayout')
-@section('title', 'Register')
-@section('', 'active')
+@section('title', 'Tambah Produk')
 
 @section('content')
-    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+
+    {{-- Navbar harus di sini, bukan di atas @extends --}}
+    @include('Layout.navigation')
+
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
         <div class="card p-4 shadow" style="width: 400px;">
             <h4 class="d-flex justify-content-center mb-4">TAMBAH PRODUK</h4>
-            <form>
+
+            <form action="{{ route('produk.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+
                 <div class="mb-3">
-                    <label for="inputProduk" class="form-label">Nama Produk</label>
-                    <input type="name" class="form-control" id="inputProduk">
+                    <label class="form-label">Nama Produk</label>
+                    <input type="text" name="name" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="inputPassword" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword">
+                    <label class="form-label">Harga</label>
+                    <input type="number" name="price" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="inputHarga" class="form-label">Harga</label>
-                    <input type="number" class="form-control" id="inputHarga">
+                    <label class="form-label">Kategori</label>
+                    <select name="category_id" class="form-control" required>
+                        <option value="">-- Pilih Kategori --</option>
+
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+
+                    </select>
                 </div>
 
                 <div class="mb-3">
-                    <label for="formFile" class="form-label">Foto Produk</label>
-                    <input class="form-control" type="file" id="formFile">
+                    <label class="form-label">Foto Produk</label>
+                    <input class="form-control" type="file" name="image">
                 </div>
-                
-                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
             </form>
         </div>
     </div>

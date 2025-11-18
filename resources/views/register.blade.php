@@ -1,6 +1,6 @@
 @extends('Layout.mainlayout')
-@section('title', 'Register') 
-@section('', 'active')
+@include("Layout.navigation")
+@section('title', 'Tambah Produk')
 
 @section('content')
 <div>

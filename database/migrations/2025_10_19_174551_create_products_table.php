@@ -14,7 +14,6 @@ return new class extends Migration
             // Define the category_id column first
             $table->unsignedBigInteger('category_id');
             $table->decimal('price');
-            $table->integer('stock_quantity');
             $table->string('image_url')->nullable();
             $table->timestamps();
 

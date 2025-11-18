@@ -13,16 +13,20 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav fw-semibold" style="font-family: 'Poppins', sans-serif;">
                 <li class="nav-item">
-                    <a class="nav-link text-dark mx-2 @yield('berandaActive')" href="/">Beranda</a>
+                    <a class="nav-link mx-2 {{ request()->is('/') ? 'active' : '' }}" href="/">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark mx-2 @yield('katalogActive')" href="/katalog">Katalog</a>
+                    <a class="nav-link mx-2 {{ request()->is('katalog') ? 'active' : '' }}" href="/katalog">Katalog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark mx-2 @yield('keranjangActive')" href="/keranjang">Keranjang</a>
+                    <a class="nav-link mx-2 {{ request()->is('keranjang') ? 'active' : '' }}"
+                        href="/keranjang">Keranjang</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark mx-2 @yield('profilActive')" href="/profile">Profil</a>
+                    <a class="nav-link mx-2 {{ request()->is('profile') ? 'active' : '' }}" href="/profile">Profil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-2 {{ request()->is('login') ? 'active' : '' }}" href="/login">Login</a>
                 </li>
             </ul>
         </div>

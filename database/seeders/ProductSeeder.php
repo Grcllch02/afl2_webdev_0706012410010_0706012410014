@@ -14,7 +14,7 @@ class ProductSeeder extends Seeder
             'name' => 'Bola Futsal',
             'category_id' => 1,
             'price' => 120000.00,
-            'stock_quantity' => 20,
+
             'image_url' => 'image/bolafutsal.png'
         ]);
 
@@ -22,7 +22,7 @@ class ProductSeeder extends Seeder
             'name' => 'Bola Basket',
             'category_id' => 1,
             'price' => 85000.00,
-            'stock_quantity' => 19,
+
             'image_url' => 'image/bolabasket.png'
         ]);
 
@@ -30,7 +30,7 @@ class ProductSeeder extends Seeder
             'name' => 'Bola Sepak',
             'category_id' => 1,
             'price' => 110000.00,
-            'stock_quantity' => 25,
+
             'image_url' => 'image/bolasepak.png'
         ]);
 
@@ -38,7 +38,7 @@ class ProductSeeder extends Seeder
             'name' => 'Bola Voli',
             'category_id' => 1,
             'price' => 290000.00,
-            'stock_quantity' => 29,
+
             'image_url' => 'image/bolavoli.png'
         ]);
 
@@ -47,7 +47,7 @@ class ProductSeeder extends Seeder
             'name' => 'Raket YTY',
             'category_id' => 2,
             'price' => 48000.00,
-            'stock_quantity' => 19,
+
             'image_url' => 'image/raket.png'
         ]);
 
@@ -55,7 +55,7 @@ class ProductSeeder extends Seeder
             'name' => 'Raket Arrowpoint',
             'category_id' => 2,
             'price' => 115000.00,
-            'stock_quantity' => 30,
+
             'image_url' => 'image/raketarrowpoint.png'
         ]);
 
@@ -63,7 +63,7 @@ class ProductSeeder extends Seeder
             'name' => 'Raket Yonex',
             'category_id' => 2,
             'price' => 450000.00,
-            'stock_quantity' => 34,
+
             'image_url' => 'image/raketyonex.png'
         ]);
 
@@ -71,7 +71,7 @@ class ProductSeeder extends Seeder
             'name' => 'Shuttlecock',
             'category_id' => 2,
             'price' => 125000.00,
-            'stock_quantity' => 100,
+
             'image_url' => 'image/shuttlecock.png'
         ]);
 
@@ -80,7 +80,7 @@ class ProductSeeder extends Seeder
             'name' => 'Kacamata Mako',
             'category_id' => 3,
             'price' => 105000.00,
-            'stock_quantity' => 12,
+
             'image_url' => 'image/kacamatamako.png'
         ]);
 
@@ -88,7 +88,7 @@ class ProductSeeder extends Seeder
             'name' => 'Rompi Dewasa',
             'category_id' => 3,
             'price' => 90000.00,
-            'stock_quantity' => 38,
+
             'image_url' => 'image/rompidewasa.png'
         ]);
 
@@ -96,7 +96,7 @@ class ProductSeeder extends Seeder
             'name' => 'Papan Renang',
             'category_id' => 3,
             'price' => 45000.00,
-            'stock_quantity' => 34,
+
             'image_url' => 'image/papanrenang.png'
         ]);
 
@@ -104,7 +104,7 @@ class ProductSeeder extends Seeder
             'name' => 'Baju Renang',
             'category_id' => 3,
             'price' => 90000.00,
-            'stock_quantity' => 100,
+
             'image_url' => 'image/bajurenang.png'
         ]);
 
@@ -113,7 +113,7 @@ class ProductSeeder extends Seeder
             'name' => 'Stik Scorpion',
             'category_id' => 4,
             'price' => 200000.00,
-            'stock_quantity' => 18,
+
             'image_url' => 'image/stikscorpion.png'
         ]);
 
@@ -121,7 +121,7 @@ class ProductSeeder extends Seeder
             'name' => 'Tas Murrey',
             'category_id' => 4,
             'price' => 225000.00,
-            'stock_quantity' => 20,
+
             'image_url' => 'image/tasmurrey.png'
         ]);
 
@@ -129,7 +129,7 @@ class ProductSeeder extends Seeder
             'name' => 'Bola Billiard',
             'category_id' => 4,
             'price' => 225000.00,
-            'stock_quantity' => 39,
+
             'image_url' => 'image/bolabilliard.png'
         ]);
 
@@ -137,7 +137,7 @@ class ProductSeeder extends Seeder
             'name' => 'Sarung Tangan',
             'category_id' => 4,
             'price' => 16000.00,
-            'stock_quantity' => 100,
+
             'image_url' => 'image/sarungtangan.png'
         ]);
         // Padel (category_id = 5)
@@ -145,7 +145,7 @@ class ProductSeeder extends Seeder
             'name' => 'Raket Padel Bullpadel',
             'category_id' => 5,
             'price' => 950000.00,
-            'stock_quantity' => 10,
+
             'image_url' => 'image/RaketPadelBullpadel.webp'
         ]);
 
@@ -153,7 +153,7 @@ class ProductSeeder extends Seeder
             'name' => 'Bola Padel Head',
             'category_id' => 5,
             'price' => 120000.00,
-            'stock_quantity' => 25,
+
             'image_url' => 'image/BolaPadelHead.png'
         ]);
 
@@ -161,7 +161,7 @@ class ProductSeeder extends Seeder
             'name' => 'Tas Raket Padel',
             'category_id' => 5,
             'price' => 240000.00,
-            'stock_quantity' => 15,
+
             'image_url' => 'image/TasRaketPadel.png'
         ]);
 
@@ -169,7 +169,7 @@ class ProductSeeder extends Seeder
             'name' => 'Baju Padel',
             'category_id' => 5,
             'price' => 50000.00,
-            'stock_quantity' => 15,
+
             'image_url' => 'image/bajupadel.png'
         ]);
 
@@ -178,7 +178,7 @@ class ProductSeeder extends Seeder
             'name' => 'Raket Wilson',
             'category_id' => 6,
             'price' => 670000.00,
-            'stock_quantity' => 20,
+
             'image_url' => 'image/raketwilson.png'
         ]);
 
@@ -186,7 +186,7 @@ class ProductSeeder extends Seeder
             'name' => 'Bola Tenis Dunlop',
             'category_id' => 6,
             'price' => 80000.00,
-            'stock_quantity' => 50,
+
             'image_url' => 'image/BolaTenisDunlop.png'
         ]);
 
@@ -194,7 +194,7 @@ class ProductSeeder extends Seeder
             'name' => 'Tas Raket Tenis',
             'category_id' => 6,
             'price' => 180000.00,
-            'stock_quantity' => 18,
+
             'image_url' => 'image/TasRaketTenis.webp'
         ]);
 
@@ -202,7 +202,7 @@ class ProductSeeder extends Seeder
             'name' => 'Topi Tenis',
             'category_id' => 6,
             'price' => 180000.00,
-            'stock_quantity' => 18,
+
             'image_url' => 'image/topitenis.webp'
         ]);
 
@@ -211,7 +211,7 @@ class ProductSeeder extends Seeder
             'name' => 'Bet Pingpong Butterfly',
             'category_id' => 7,
             'price' => 135000.00,
-            'stock_quantity' => 25,
+
             'image_url' => 'image/BetPingpongButterfly.webp'
         ]);
 
@@ -219,7 +219,7 @@ class ProductSeeder extends Seeder
             'name' => 'Bola Pingpong DHS',
             'category_id' => 7,
             'price' => 45000.00,
-            'stock_quantity' => 60,
+
             'image_url' => 'image/BolaPingpongDHS.png'
         ]);
 
@@ -227,7 +227,7 @@ class ProductSeeder extends Seeder
             'name' => 'Net Meja Pingpong',
             'category_id' => 7,
             'price' => 80000.00,
-            'stock_quantity' => 30,
+
             'image_url' => 'image/NetMejaPingpong.webp'
         ]);
 
@@ -235,7 +235,7 @@ class ProductSeeder extends Seeder
             'name' => 'Tas Pingpong',
             'category_id' => 7,
             'price' => 80000.00,
-            'stock_quantity' => 30,
+
             'image_url' => 'image/taspingpong.png'
         ]);
 
@@ -244,7 +244,7 @@ class ProductSeeder extends Seeder
             'name' => 'Stick Golf Callaway',
             'category_id' => 8,
             'price' => 950000.00,
-            'stock_quantity' => 8,
+
             'image_url' => 'image/StickGolfCallaway.webp'
         ]);
 
@@ -252,7 +252,7 @@ class ProductSeeder extends Seeder
             'name' => 'Bola Golf Titleist',
             'category_id' => 8,
             'price' => 150000.00,
-            'stock_quantity' => 40,
+
             'image_url' => 'image/BolaGolfTitleist.png'
         ]);
 
@@ -260,7 +260,7 @@ class ProductSeeder extends Seeder
             'name' => 'Sarung Tangan Golf',
             'category_id' => 8,
             'price' => 70000.00,
-            'stock_quantity' => 20,
+
             'image_url' => 'image/SarungTanganGolf.webp'
         ]);
 
@@ -268,7 +268,7 @@ class ProductSeeder extends Seeder
             'name' => 'Sepatu Golf',
             'category_id' => 8,
             'price' => 70000.00,
-            'stock_quantity' => 20,
+
             'image_url' => 'image/sepatugolf.png'
         ]);
 
@@ -277,7 +277,7 @@ class ProductSeeder extends Seeder
             'name' => 'Botol Minum Sport',
             'category_id' => 9,
             'price' => 55000.00,
-            'stock_quantity' => 100,
+
             'image_url' => 'image/BotolMinumSport.png'
         ]);
 
@@ -285,7 +285,7 @@ class ProductSeeder extends Seeder
             'name' => 'Tas Gym',
             'category_id' => 9,
             'price' => 130000.00,
-            'stock_quantity' => 40,
+
             'image_url' => 'image/TasGym.png'
         ]);
 
@@ -293,7 +293,7 @@ class ProductSeeder extends Seeder
             'name' => 'Headband Olahraga',
             'category_id' => 9,
             'price' => 25000.00,
-            'stock_quantity' => 80,
+
             'image_url' => 'image/HeadbandOlahraga.png'
         ]);
 
@@ -301,7 +301,6 @@ class ProductSeeder extends Seeder
             'name' => 'Handuk Olahraga',
             'category_id' => 9,
             'price' => 25000.00,
-            'stock_quantity' => 80,
             'image_url' => 'image/handukolahraga.png'
         ]);
 
@@ -310,7 +309,7 @@ class ProductSeeder extends Seeder
             'name' => 'Dumbbell',
             'category_id' => 10,
             'price' => 21000.00,
-            'stock_quantity' => 16,
+
             'image_url' => 'image/dumbbell.png'
         ]);
 
@@ -318,7 +317,7 @@ class ProductSeeder extends Seeder
             'name' => 'Lompat Tali',
             'category_id' => 10,
             'price' => 50000.00,
-            'stock_quantity' => 60,
+
             'image_url' => 'image/lompattali.png'
         ]);
 
@@ -326,7 +325,7 @@ class ProductSeeder extends Seeder
             'name' => 'Pelindung Lutut',
             'category_id' => 10,
             'price' => 60000.00,
-            'stock_quantity' => 33,
+
             'image_url' => 'image/pelindunglutut.png'
         ]);
 
@@ -334,7 +333,7 @@ class ProductSeeder extends Seeder
             'name' => 'Hand Grip',
             'category_id' => 10,
             'price' => 28000.00,
-            'stock_quantity' => 45,
+
             'image_url' => 'image/handgrip.png'
         ]);
     }

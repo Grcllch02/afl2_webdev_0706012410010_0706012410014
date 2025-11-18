@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         // Cart harus setelah user dibuat
         $this->call([
             CartSeeder::class,
+            UserSeeder::class
         ]);
     }
 }
