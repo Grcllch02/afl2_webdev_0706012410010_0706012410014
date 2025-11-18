@@ -17,11 +17,18 @@ Route::get('/', function () {
 // Route::get('/tentangkami', function () {
 //     return view('tentangkami');
 // })->name('tentangkami');
+
+Route::get('/katalogAdmin', [KatalogAdminController::class, 'index'])
+    ->name('katalogAdmin');
+
 Route::get('/produk/create', [ProductController::class, 'create'])->name('produk.create');
 Route::post('/produk', [ProductController::class, 'store'])->name('produk.store');
 
 Route::get('/produk/{id}/edit', [ProductController::class, 'edit'])->name('produk.edit');
 Route::put('/produk/{id}', [ProductController::class, 'update'])->name('produk.update');
+
+Route::delete('/produk/{id}', [ProductController::class, 'destroy'])->name('produk.destroy');
+
 
 // Category CRUD
 Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
@@ -31,14 +38,13 @@ Route::delete('/category/{id}', [CategoryController::class, 'destroy'])->name('c
 
 Route::get('/katalog', [KatalogController::class, 'index'])->name('katalog');
 
-Route::get('/katalogAdmin', [KatalogAdminController::class, 'index'])
-    ->name('katalogAdmin');
+
 
 Route::get('/keranjang', [CartController::class, 'index'])->name('keranjang');
 
 Route::get('/profile', [UserController::class, 'index'])->name('profile');
 
-Route::delete('/produk/{id}', [ProductController::class, 'destroy'])->name('produk.destroy');
+
 // Route::get('/tambahProduk')->name('tambahProduk');
 
 // Route::get('/tambahProduk', function () {
