@@ -6,6 +6,7 @@ use App\Http\Controllers\KatalogController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\KatalogAdminController;
 use App\Http\Controllers\ProductController;
 
@@ -22,8 +23,14 @@ Route::post('/produk', [ProductController::class, 'store'])->name('produk.store'
 Route::get('/produk/{id}/edit', [ProductController::class, 'edit'])->name('produk.edit');
 Route::put('/produk/{id}', [ProductController::class, 'update'])->name('produk.update');
 
+// Category CRUD
+Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
+
+Route::delete('/category/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
 
 Route::get('/katalog', [KatalogController::class, 'index'])->name('katalog');
+
 Route::get('/katalogAdmin', [KatalogAdminController::class, 'index'])
     ->name('katalogAdmin');
 
@@ -34,9 +41,9 @@ Route::get('/profile', [UserController::class, 'index'])->name('profile');
 Route::delete('/produk/{id}', [ProductController::class, 'destroy'])->name('produk.destroy');
 // Route::get('/tambahProduk')->name('tambahProduk');
 
-Route::get('/tambahProduk', function () {
-    return view('tambahProduk');
-});
+// Route::get('/tambahProduk', function () {
+//     return view('tambahProduk');
+// });
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 

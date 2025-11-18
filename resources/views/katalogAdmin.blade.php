@@ -11,6 +11,9 @@
         <a href="{{ route('produk.create') }}" class="btn btn-primary mb-4">
             + Add Product
         </a>
+        <a href="{{ route('category.create') }}" class="btn btn-primary mb-4">
+            + Add Category
+        </a>
         <div class="text-center mb-5 p-5 text-white"
             style="background: linear-gradient(135deg, #0d6efd 0%, #764ba2 100%); border-radius: 15px;">
             <h1 class="display-4 fw-bold">Katalog Produk</h1>
@@ -20,10 +23,19 @@
         {{-- Looping Kategori --}}
         @foreach ($categories as $category)
             <div class="mb-5">
-                <h2 class="mb-4 display-6 border-bottom pb-2">{{ $category->name }}</h2>
+                <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+                    <h2 class="display-6">{{ $category->name }}</h2>
+
+                    {{-- Tombol Delete Kategori --}}
+                    <form action="{{ route('category.destroy', $category->id) }}" method="POST"
+                        onsubmit="return confirm('Yakin ingin menghapus kategori ini beserta produknya?');">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm">Delete Category</button>
+                    </form>
+                </div>
 
                 <div class="row g-4">
-
                     {{-- Looping Produk di dalam Kategori ini --}}
                     @forelse($category->products as $product)
                         <div class="col-md-4 col-lg-3">
@@ -51,7 +63,6 @@
                                             class="flex-fill h-100">
                                             @csrf
                                             @method('DELETE')
-
                                             <button type="submit"
                                                 class="btn btn-danger w-100 h-100 d-flex justify-content-center align-items-center"
                                                 onclick="return confirm('Yakin ingin menghapus produk ini?')">
@@ -65,7 +76,6 @@
                             </div>
                         </div>
                     @empty
-                        {{-- jika tidak ada produk di kategori ini --}}
                         <div class="col-12">
                             <p class="text-muted">Belum ada produk di kategori ini.</p>
                         </div>
@@ -73,6 +83,7 @@
                 </div>
             </div>
         @endforeach
+
         <div>
             {{-- link ini untuk tampilin yang angka 1 2 next" page gitu yang di bawah --}}
             {{ $categories->links() }}
