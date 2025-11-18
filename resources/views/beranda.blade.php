@@ -1,11 +1,20 @@
 @extends('Layout.mainlayout')
 @include("Layout.navigation")
+@section('title', 'Tentang Kami')
 @section('berandaActive', 'active')
-@section('title', 'Tentang Kami') {{-- Judulnya lebih cocok Tentang Kami --}}
 
 @section('content')
 
     <div class="container py-5">
+
+        {{-- ✅ Success Alert --}}
+        @if(session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        @endif
 
         <div class="text-center mb-5">
             <h1 class="display-5 fw-bold text-dark">Tentang Kami</h1>

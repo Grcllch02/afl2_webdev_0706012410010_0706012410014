@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -29,6 +30,11 @@ class CartController extends Controller
      */
     public function add(Request $request, $productId)
     {
+        // ✅ Cek apakah user sudah login
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'Silakan login terlebih dahulu untuk menambahkan produk ke keranjang!');
+        }
+
         $product = Product::findOrFail($productId);
         
         // Ambil cart dari session

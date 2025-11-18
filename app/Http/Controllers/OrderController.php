@@ -8,6 +8,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -16,8 +17,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        // Untuk sementara pakai user_id = 2
-        $orders = Order::where('user_id', 2)
+        $orders = Order::where('user_id', Auth::id())  // ✅ Auth::id()
             ->with('orderDetails.product')
             ->orderBy('created_at', 'desc')
             ->get();
@@ -31,7 +31,7 @@ class OrderController extends Controller
     public function show($orderId)
     {
         $order = Order::with('orderDetails.product')
-            ->where('user_id', 2)
+            ->where('user_id', Auth::id())  // ✅ Auth::id()
             ->findOrFail($orderId);
 
         return view('orders.show', compact('order'));
@@ -73,11 +73,14 @@ class OrderController extends Controller
                 $total += $item['price'] * $item['quantity'];
             }
 
+            // ✅ SET TIMEZONE JAKARTA
+            $now = Carbon::now('Asia/Jakarta');
+
             // Buat order
             $order = Order::create([
-                'user_id' => 2, // Hardcode untuk testing
-                'order_date' => Carbon::now()->setTimezone('Asia/Jakarta'),
-                'order_time' => Carbon::now()->setTimezone('Asia/Jakarta')->format('H:i:s'),
+                'user_id' => Auth::id(),  // ✅ Auth::id()
+                'order_date' => $now,
+                'order_time' => $now->format('H:i:s'),
                 'status' => 'pending',
                 'total_amount' => $total
             ]);
@@ -121,7 +124,7 @@ class OrderController extends Controller
      */
     public function cancel($orderId)
     {
-        $order = Order::where('user_id', 2)->findOrFail($orderId);
+        $order = Order::where('user_id', Auth::id())->findOrFail($orderId);  // ✅ Auth::id()
 
         // Hanya bisa cancel kalau status masih pending
         if ($order->status !== 'pending') {
