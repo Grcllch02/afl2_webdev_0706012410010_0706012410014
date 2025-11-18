@@ -26,19 +26,14 @@
                             <p class="text-muted small">{{ $user->email ?? '' }}</p>
 
                             <div class="list-group mt-4 text-start">
-    <a href="{{ route('profile') }}" class="list-group-item list-group-item-action active">
-        Profil Saya
-    </a>
-    <a href="{{ route('keranjang') }}" class="list-group-item list-group-item-action">
-        Keranjang
-    </a>
-    <a href="{{ route('orders.index') }}" class="list-group-item list-group-item-action">
-        Pesanan
-    </a>
-    <a href="#" class="list-group-item list-group-item-action text-danger fw-medium">
-        Keluar
-    </a>
-</div>
+                                <a href="#" class="list-group-item list-group-item-action active"
+                                    aria-current="true">Profil Saya</a>
+                                <a href="{{ route('keranjang') }}"
+                                    class="list-group-item list-group-item-action">Keranjang</a>
+                                <a href="#" class="list-group-item list-group-item-action">Pesanan</a>
+                                <a href="#"
+                                    class="list-group-item list-group-item-action text-danger fw-medium">Keluar</a>
+                            </div>
 
                             <button class="btn btn-danger w-100 mt-3">Hapus Akun</button>
                         </div>

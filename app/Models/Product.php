@@ -19,11 +19,11 @@ class Product extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class); //setiap produk punya satu kategori
+        return $this->belongsTo(Category::class);
     }
 
     public function carts()
     {
-        return $this->hasMany(Cart::class); //produk bs muncul di bnyk keranjang
+        return $this->hasMany(Cart::class);
     }
 }
