@@ -4,7 +4,7 @@
     <div class="container py-3">
         <a class="navbar-brand fw-semibold d-flex align-items-center" href="/"
             style="font-family: 'Playfair Display', serif; color: #4a3b2c;">
-            <img src="image/LOGO-MEGARIA-SPORT.png" alt="Logo" class="img-fluid me-2"
+             <img src="{{ asset('image/LOGO-MEGARIA-SPORT.png') }}"  alt="Logo" class="img-fluid me-2"
                 style="width: 60px; height: auto;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

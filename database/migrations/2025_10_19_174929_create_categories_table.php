@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id();
+        Schema::create('categories', function (Blueprint $table) { 
+            //Schema::create memberitahu Laravel buat membuat tabel di database saat php artisan migrate dijalankan.
+            //Blueprint $table --> objek yang dipakai untuk mendefinisikan kolom tabel.
+            $table->id(); //sm kek $table->bigIncrements('id');
             $table->string('name');
             $table->timestamps();
         });
