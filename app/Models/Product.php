@@ -8,36 +8,23 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-
+    
     protected $fillable = [
-        'name',
-        'category_id',
-        'price',
-        'image_url',
-        'stock_quantity'  // ⭐ TAMBAHKAN INI
+        'name', 
+        'category_id', 
+        'price', 
+        'stock_quantity', 
+        'image_url'
     ];
 
-    /**
-     * Relasi ke Category
-     */
     public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
+{
+    return $this->belongsTo(Category::class, 'category_id');
+}
 
-    /**
-     * Relasi ke Cart
-     */
+
     public function carts()
     {
         return $this->hasMany(Cart::class);
-    }
-
-    /**
-     * Relasi ke OrderDetail
-     */
-    public function orderDetails()
-    {
-        return $this->hasMany(OrderDetail::class);
     }
 }

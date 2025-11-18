@@ -67,7 +67,7 @@ class AuthController extends Controller
             
             // Redirect berdasarkan role
             if (Auth::user()->status === 'admin') {
-                return redirect()->route('admin.katalog');
+                return redirect()->route('katalogAdmin');
             }
             
             return redirect()->route('beranda');

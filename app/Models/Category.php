@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = ['name'];
 
+    // Relasi ke produk
     public function products()
-    {
-        return $this->hasMany(Product::class); //satu kategori bisa punya banyak produk
-    }
+{
+    return $this->hasMany(Product::class, 'category_id');
+}
+
 }

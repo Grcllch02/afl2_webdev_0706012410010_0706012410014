@@ -5,6 +5,7 @@
 
 @section('content')
     <div class="container my-5">
+        {{-- minta input ini pake get --}}
         {{-- Search Form --}}
         <form action="/katalog" method="GET" class="form-inline w-25 d-flex gap-2 mb-4">
             <input type="search" placeholder="Search" name="search" class="form-control">
