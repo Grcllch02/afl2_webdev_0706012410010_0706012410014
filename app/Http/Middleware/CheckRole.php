@@ -9,16 +9,18 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CheckRole
 {
-    public function handle(Request $request, Closure $next, string $role): Response
-    {
-        if (!Auth::check()) {
-            return redirect()->route('login');
-        }
-
-        if (Auth::user()->status !== $role) {
-            abort(403, 'Unauthorized action.');
-        }
-
-        return $next($request);
+public function handle(Request $request, Closure $next, string $role): Response
+{
+    if (!Auth::check()) {
+        return redirect()->route('login');
     }
+
+    // Pakai status untuk role user
+    if (Auth::user()->status !== $role) {
+        abort(403, 'Unauthorized action.');
+    }
+
+    return $next($request);
+}
+
 }
