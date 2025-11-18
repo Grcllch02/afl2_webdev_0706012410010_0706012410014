@@ -10,7 +10,7 @@ class KatalogAdminController extends Controller
     public function categoryDestroy(Category $category)
 {
     $category->delete();
-    return redirect()->route('category.index')->with('success', 'Kategori berhasil dihapus!');
+    return redirect()->route('katalogAdmin')->with('success', 'Kategori berhasil dihapus!');
 }
     public function index(Request $request)
     {

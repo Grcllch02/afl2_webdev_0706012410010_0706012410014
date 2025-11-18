@@ -17,7 +17,7 @@ class KatalogController extends Controller
             $categories = Category::with(['products' => function ($query) use ($search) {
                 $query->where('name', 'like', '%' . $search . '%');
             }])
-                // setelah ambil produk yang sesuai dengan search, dia cek kategorinya lagi kalo sesuai dengan search juga mak aditampilkan 
+                // setelah ambil produk yang sesuai dengan search, dia cek kategorinya lagi kalo sesuai dengan search juga maka ditampilkan 
                 ->where(function ($query) use ($search) {
                     // Filter kategori berdasarkan nama
                     $query->where('name', 'like', '%' . $search . '%')

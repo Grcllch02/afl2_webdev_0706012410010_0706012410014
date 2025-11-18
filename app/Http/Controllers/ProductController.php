@@ -20,7 +20,9 @@ class ProductController extends Controller
 
     public function create()
     {
+        // ambil semua kat untuk bisa pake di dropdown 
         $categories = Category::all();
+        // lalu baru direct ke file tambah produk itu 
         return view('tambahProduk', compact('categories'));
     }
 
@@ -84,19 +86,25 @@ class ProductController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
+        // kalo misal admin tdk isi image brrti dia taruh null
         $imagePath = null;
+        // kalo ada file yang dikirim dengan nama image yang di htmlnya 
         if ($request->hasFile('image')) {
+            // kalo ada dia bakal ke simpan ke public/upload/products
             $imagePath = 'uploads/products/';
+            // isi namanya pake waktunya dan getclientoriginalname itu untuk ambil nama asli dari file usernya 
             $imageName = time() . '-' . $request->image->getClientOriginalName();
+            // simpan file image ke foldedr public 
             $request->image->move(public_path($imagePath), $imageName);
+            // simpan database lengkap ke database 
             $imagePath .= $imageName;
         }
 
-        // SIMPAN KE DATABASE
+        //  buat dan simpan ke database
         Product::create([
             'name' => $request->name,
             'price' => $request->price,
-            'category_id' => $request->category_id, // ← WAJIB
+            'category_id' => $request->category_id, 
             'image_url' => $imagePath
         ]);
 
