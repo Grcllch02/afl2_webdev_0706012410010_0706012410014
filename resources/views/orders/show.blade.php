@@ -1,4 +1,5 @@
 @extends('Layout.mainlayout')
+@include('Layout.navigation')
 @section('title', 'Detail Pesanan')
 @section('profilActive', 'active')
 

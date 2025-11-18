@@ -16,7 +16,7 @@ return new class extends Migration
             $table->decimal('price');
             $table->string('image_url')->nullable();
             $table->timestamps();
-
+$table->integer('stock_quantity')->default(0);
             // Foreign key SETELAH kolom dibuat
             $table->foreign('category_id')
                 ->references('id')
