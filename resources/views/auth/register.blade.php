@@ -9,10 +9,10 @@
                 <div class="card-body p-5">
                     {{-- Logo/Header --}}
                     <div class="text-center mb-4">
-                        <h2 class="fw-bold text-primary">
-                            <i class="bi bi-trophy-fill"></i>
-                            MEGARIA Sport
-                        </h2>
+    <img src="{{ asset('image/LOGO-MEGARIA-SPORT.png') }}" 
+         alt="Megaria Sport Logo" 
+         class="img-fluid mb-2" 
+         style="width: 120px;">
                         <p class="text-muted">Daftar akun baru</p>
                     </div>
 
