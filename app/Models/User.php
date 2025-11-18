@@ -23,8 +23,8 @@ class User extends Authenticatable
         'address',
     ];
 
-    public function carts()
+    public function orders()
     {
-        return $this->hasMany(Cart::class);
+        return $this->hasMany(Order::class);
     }
 }
