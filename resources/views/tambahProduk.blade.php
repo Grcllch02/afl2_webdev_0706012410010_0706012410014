@@ -1,5 +1,4 @@
 @extends('Layout.mainlayout')
-@include('Layout.navigation')
 @section('title', 'Tambah Produk')
 
 @section('content')

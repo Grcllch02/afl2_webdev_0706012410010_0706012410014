@@ -3,37 +3,27 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
+use \App\Models\User;
+
 
 class DatabaseSeeder extends Seeder
 {
+    /**
+     * Run the database seeds.
+     */
     public function run(): void
     {
         $this->call([
             CategorySeeder::class,
             ProductSeeder::class,
         ]);
+        
+        \App\Models\User::factory()->count(100)->create();
 
-        // ✅ Buat 1 user untuk testing
-        User::create([
-            'name' => 'Test User',
-            'email' => 'test@gmail.com',
-            'password' => Hash::make('password'),
-            'phone' => '08123456789',
-            'address' => 'Jl. Test No. 123, Surabaya',
+        // Cart harus setelah user dibuat
+        $this->call([
+            CartSeeder::class,
+            UserSeeder::class
         ]);
-
-        // ✅ Buat user lain
-        User::create([
-            'name' => 'Michelle',
-            'email' => 'michelle@gmail.com',
-            'password' => Hash::make('password'),
-            'phone' => '08567890123',
-            'address' => 'Jl. Solo No. 456, Surabaya',
-        ]);
-
-        // ✅ Buat 100 user random
-        User::factory()->count(100)->create();
     }
 }
