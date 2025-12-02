@@ -14,11 +14,20 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+
             $table->string('name');
             $table->string('email');
             $table->string('password');
+
             // kalo misal tidak ada keterangan admin atau user maka dia akan otomatis user
-            $table->enum('status', ['admin', 'user'])-> default('user');
+            // $table->enum('status', ['admin', 'user'])-> default('user');
+
+            // ini ubah karna sudah ada tabel role
+            // ???????????????
+            $table->unsignedBigInteger('role_id');
+            $table->foreign('role_id')->references('id')->on('role')
+                ->onDelete('set null');
+
             $table->string('phone');
             $table->string('address');
             $table->timestamps();
